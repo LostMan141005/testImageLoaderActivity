@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
     private Button btn_list = null;
     private Button btn_grad = null;
     private Button btn_test = null;
-    private String url = "http://192.168.14.150:8080/quickframe/upload/head_image/xh.jpg";
+    private String url = "http://192.168.14.150:8080/quickframe/upload/head_image/cea0591f-a4d0-4adf-a11b-3d734f791228.jpg";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
