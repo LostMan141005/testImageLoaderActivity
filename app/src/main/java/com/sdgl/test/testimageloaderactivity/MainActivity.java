@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener{
 
     private ImageLoader imageLoader = new ImageLoader(this,R.mipmap.main_index_my_normal,R.mipmap.main_index_my_normal);
 
@@ -23,26 +23,29 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FindViewById();
+        ClickListener();
+
+    }
+
+    public void FindViewById(){
         iv_photo = (ImageButton) findViewById(R.id.iv_photo);
         btn_list = (Button) findViewById(R.id.btn_list);
         btn_grad = (Button) findViewById(R.id.btn_gird);
         btn_test = (Button) findViewById(R.id.btn_test);
     }
-
+    public void ClickListener(){
+        btn_list.setOnClickListener(this);
+        btn_grad.setOnClickListener(this);
+        btn_test.setOnClickListener(this);
+    }
     @Override
     protected void onResume() {
         imageLoader.loadImage(iv_photo,url);
         super.onResume();
     }
-    public View.OnClickListener listener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()){
-                case R.id.btn_test:
-                    Intent intent = new Intent(MainActivity.this,testActivity.class);
-                    startActivity(intent);
-                    break;
-            }
-        }
-    };
+    @Override
+    public void onClick(View v) {
+
+    }
 }
